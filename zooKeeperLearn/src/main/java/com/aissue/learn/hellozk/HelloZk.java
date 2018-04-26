@@ -1,20 +1,49 @@
 package com.aissue.learn.hellozk;
 
 import org.apache.zookeeper.*;
+import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ThreadPoolExecutor;
 
 
 public class HelloZk {
+    private ZooKeeper zk = null;
+    private HelloWatcher hw = null;
+
+    @Before
+    public void before() throws IOException {
+        this.zk = new ZooKeeper("192.168.248.128:2181", 3000, new Watcher() {
+            public void process(WatchedEvent watchedEvent) {
+//                System.out.println("已经触发了"+watchedEvent.getType()+"事件。");
+            }
+        });
+        this.hw = new HelloWatcher();
+    }
+
+    @Test
+    public void test2(){
+        try{
+            if(zk.exists("/testWatch",hw) == null){
+                zk.create("/testWatch","tesWatchValue".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+            }
+            System.out.println(new String(zk.getData("/testWatch",true,null)));
+            Thread.sleep(3000l);
+            zk.setData("/testWatch","changeValue".getBytes(),-1);
+            System.out.println(new String(zk.getData("/testWatch",true,null)));
+            if(zk.exists("/testWatch",hw) != null){
+                zk.delete("/testWatch",-1);
+            }
+
+        }catch (Exception e){
+        }
+    }
+
     @Test
     public void test1(){
         try {
-            ZooKeeper zk = new ZooKeeper("192.168.248.128:2181", 3000, new Watcher() {
-                public void process(WatchedEvent watchedEvent) {
-                    System.out.println("已经触发了"+watchedEvent.getType()+"事件。");
-                }
-            });
             if(zk.exists("/testRootPath",false) == null){
                 zk.create("/testRootPath","testRootValue".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
             }
