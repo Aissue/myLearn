@@ -14,8 +14,8 @@ public class HelloZk {
     private HelloWatcher hw = null;
 
     @Before
-    public void before() throws IOException {
-        this.zk = new ZooKeeper("192.168.248.128:2181", 3000, new Watcher() {
+    public void before() throws IOException {//10.1.1.147:2181,
+        this.zk = new ZooKeeper("192.168.248.128:2181,127.0.0.1:2181", 3000, new Watcher() {
             public void process(WatchedEvent watchedEvent) {
 //                System.out.println("已经触发了"+watchedEvent.getType()+"事件。");
             }
@@ -33,9 +33,9 @@ public class HelloZk {
             Thread.sleep(3000l);
             zk.setData("/testWatch","changeValue".getBytes(),-1);
             System.out.println(new String(zk.getData("/testWatch",true,null)));
-            if(zk.exists("/testWatch",hw) != null){
-                zk.delete("/testWatch",-1);
-            }
+//            if(zk.exists("/testWatch",hw) != null){
+//                zk.delete("/testWatch",-1);
+//            }
 
         }catch (Exception e){
         }
