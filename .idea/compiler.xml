@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="commonWeb" />
         <module name="zooKeeperLearn" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="commonWeb" target="1.7" />
       <module name="myLearn" target="1.5" />
       <module name="zooKeeperLearn" target="1.5" />
     </bytecodeTargetLevel>
