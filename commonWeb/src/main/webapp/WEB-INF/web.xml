@@ -11,6 +11,7 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  <!-- 自定义Listener的实现 -->
   <listener>
     <listener-class>com.aissue.learn.SpringListenner</listener-class>
   </listener>
