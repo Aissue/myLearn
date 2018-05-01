@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Controller
 @RequestMapping("test")
 public class TestController {
@@ -12,9 +15,12 @@ public class TestController {
 
     @RequestMapping("index")
     @ResponseBody
-    public String test1(){
+    public Map test1(){
         logger.info("test logger...");
-        return "successful!";
+        Map<String,String> map = new HashMap<>();
+        map.put("name","aissue");
+        map.put("age","27");
+        return map;
     }
 
 }
