@@ -1,6 +1,4 @@
-package com.aissue.learn;
-
-import org.springframework.web.context.support.WebApplicationContextUtils;
+package com.aissue.listenner;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

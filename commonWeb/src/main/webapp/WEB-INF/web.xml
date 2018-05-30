@@ -20,7 +20,7 @@
   </listener>
   <!-- 自定义Listener的实现 -->
   <listener>
-    <listener-class>com.aissue.learn.SpringListenner</listener-class>
+    <listener-class>com.aissue.listenner.SpringListenner</listener-class>
   </listener>
 
   <!--<context-param>
