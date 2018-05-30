@@ -23,7 +23,7 @@
         <!-- 最大并发连接数 -->
         <property name="maxActive" value="${druid.maxActive}" />
         <!-- 最大空闲连接数 -->
-        <!--   <property name="maxIdle" value="${druid.maxIdle}" /> -->
+        <!--<property name="maxIdle" value="${druid.maxIdle}" /> -->
         <!-- 最小空闲连接数 -->
         <property name="minIdle" value="${druid.minIdle}" />
         <!-- 配置获取连接等待超时的时间 -->
@@ -53,7 +53,6 @@
                防御SQL注入的filter:wall -->
         <property name="filters" value="${druid.filters}" />
         <property name="dbType" value="mysql"/>
-
     </bean>
 
 
@@ -61,16 +60,15 @@
     <bean id="mysqlSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="mysqlDataSource" />
         <!-- 自动扫描entity目录, 省掉xml里的手工配置 -->
-        <property name="typeAliasesPackage" value="com.yscredit.entity" />
+        <property name="typeAliasesPackage" value="com.aissue.entity" />
         <!-- 显式指定Mapper文件位置  -->
         <property name="mapperLocations">
             <list>
                 <!--<value>classpath:/mybatis/**/**/*Mapper.xml</value>-->
-                <value>classpath*:com/yscredit/dao/xml/*Mapper.xml</value>
+                <value>classpath*:com/aissue/dao/xml/*Mapper.xml</value>
                 <!--<value>classpath:/oracleTableColumn/*Mapper.xml</value>-->
             </list>
         </property>
-
         <!--<property name="plugins"><array><ref bean="pagePlugin" /></array></property>-->
     </bean>
     <!--<bean id="pagePlugin" class="com.yscredit.pgp.gateway.page.PageInterceptor">
@@ -82,11 +80,12 @@
         </property>
     </bean>-->
     <!-- 分页配置end-->
+
     <!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="mysqlSqlSessionFactory"/>
         <!--<property name="basePackage" value="com.yscredit.dao,;\t\n com.yscredit.pgp.gateway.mybatis.dao" />-->
-        <property name="basePackage" value="com.yscredit.dao"/>
+        <property name="basePackage" value="com.aissue.dao"/>
         <!-- 优化速度-->
         <!--<property name="annotationClass" value="com.yscredit.pgp.gateway.mybabase.dao.MyBatis"/>-->
     </bean>
