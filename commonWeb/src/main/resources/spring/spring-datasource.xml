@@ -55,6 +55,11 @@
         <property name="dbType" value="mysql"/>
     </bean>
 
+    <!--配置动态数据源切换类bean -->
+    <bean id="dynamicDataSource" class="com.aissue.spring.DynamicDataSource" destroy-method="close" >
+        <!-- 默认使用的数据源 -->
+        <property name="defaultSource" ref="mysqlDataSource" />
+    </bean>
 
     <!-- MyBatis配置 -->
     <bean id="mysqlSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
