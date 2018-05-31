@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
     public User selectByPrimaryKey(Integer id) {
         DataSourceContextHolder.setDbType(DataSources.SLAVE);
         User user = userMapper.selectByPrimaryKey(id);
-        DataSourceContextHolder.reset();
+//        DataSourceContextHolder.reset();
         return user;
     }
 
