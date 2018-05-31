@@ -3,6 +3,8 @@ package com.aissue.service.impl;
 import com.aissue.dao.UserMapper;
 import com.aissue.entity.User;
 import com.aissue.service.UserService;
+import com.aissue.utils.DataSourceContextHolder;
+import com.aissue.utils.DataSources;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +33,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User selectByPrimaryKey(Integer id) {
-        return userMapper.selectByPrimaryKey(id);
+        DataSourceContextHolder.setDbType(DataSources.SLAVE);
+        User user = userMapper.selectByPrimaryKey(id);
+        DataSourceContextHolder.reset();
+        return user;
     }
 
     @Override
