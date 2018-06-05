@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/commonWeb/commonWeb.iml" filepath="$PROJECT_DIR$/commonWeb/commonWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubboProvider/dubboProvider.iml" filepath="$PROJECT_DIR$/dubboProvider/dubboProvider.iml" />
       <module fileurl="file://$PROJECT_DIR$/exeJar/exeJar.iml" filepath="$PROJECT_DIR$/exeJar/exeJar.iml" />
       <module fileurl="file://$PROJECT_DIR$/myLearn.iml" filepath="$PROJECT_DIR$/myLearn.iml" />
       <module fileurl="file://$PROJECT_DIR$/zooKeeperLearn/zooKeeperLearn.iml" filepath="$PROJECT_DIR$/zooKeeperLearn/zooKeeperLearn.iml" />

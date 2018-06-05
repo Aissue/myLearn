@@ -12,6 +12,7 @@
         <module>zooKeeperLearn</module>
         <module>commonWeb</module>
         <module>exeJar</module>
+        <module>dubboProvider</module>
     </modules>
 
     <properties>
