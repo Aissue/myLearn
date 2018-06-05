@@ -148,7 +148,7 @@
     </bean>
     <!-- 配置事务管理器 -->
     <bean id="mysqlTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="mysqlDataSource" />
+        <property name="dataSource" ref="dynamicDataSource" />
     </bean>
     <!--  拦截器方式配置事务 -->
     <tx:advice id="mysqlTransactionAdvice" transaction-manager="mysqlTransactionManager">

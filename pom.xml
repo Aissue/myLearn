@@ -11,6 +11,7 @@
     <modules>
         <module>zooKeeperLearn</module>
         <module>commonWeb</module>
+        <module>exeJar</module>
     </modules>
 
     <properties>
