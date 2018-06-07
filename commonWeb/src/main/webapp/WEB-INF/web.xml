@@ -23,13 +23,21 @@
     <listener-class>com.aissue.listenner.SpringListenner</listener-class>
   </listener>
 
-  <!--<context-param>
+  <!-- begin lws 修改log4j.properties内容，不用重启服务器的配置 2014-10-22 -->
+  <context-param>
     <param-name>log4jConfigLocation</param-name>
-    <param-value>classpath:log4j.properties</param-value>
+    <!-- log4j.properties的路径，相对路径到tomcat/webapps/testProject -->
+    <param-value>/WEB-INF/log4j.properties</param-value>
   </context-param>
+  <context-param>
+    <param-name>log4jRefreshInterval</param-name>
+    <!-- 刷新log4j配置信息的间隔时间，单位是毫秒 -->
+    <param-value>10000</param-value>
+  </context-param>
+
   <listener>
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-  </listener>-->
+  </listener>
 
   <!-- 拦截所有请求-->
   <servlet>

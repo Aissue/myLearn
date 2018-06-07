@@ -59,7 +59,9 @@ public class DubboUtil {
         serviceConfig.setProtocol(dubboConfig.getProtocolConfig());
         serviceConfig.setInterface(interfaceCode);
         serviceConfig.setRef(genericService);
-        serviceConfig.setTimeout(1000);
+        /*尽量在provider层进行时间的设定，消费端不做设定*/
+        serviceConfig.setTimeout(60000);
+        serviceConfig.setRetries(0);
         serviceConfig.setVersion(dubboConfig.getVersion());
         return serviceConfig;
     }

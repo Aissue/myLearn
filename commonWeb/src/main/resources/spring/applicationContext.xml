@@ -17,8 +17,8 @@
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
 
-    <context:property-placeholder ignore-unresolvable="true" location="classpath*:/spring/dbconfig.properties" />
+    <!--<context:property-placeholder ignore-unresolvable="true" location="classpath*:/spring/dbconfig.properties" />-->
     <!--<util:properties id="settings" location="classpath:spring/redis.properties"/>-->
     <!-- 数据库参数配置 -->
-    <import resource="classpath*:/spring/spring-datasource.xml"/>
+    <!--<import resource="classpath*:/spring/spring-datasource.xml"/>-->
 </beans>

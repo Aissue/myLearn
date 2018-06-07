@@ -7,10 +7,10 @@ public class InterfaceGenericService implements GenericService {
 
     public Object $invoke(String s, String[] strings, Object[] objects) throws GenericException {
         try {
-            Thread.sleep(5000L);
+            Thread.sleep(10L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "test overload invoke...";
+        return "test overload invoke...[first one]";
     }
 }

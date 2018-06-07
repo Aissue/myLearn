@@ -22,7 +22,7 @@ import java.util.Map;
 public class TestController {
     private Logger logger = Logger.getLogger(TestController.class);
 
-    @Autowired
+    @Autowired(required = false)
     private UserService userService;
 
     @RequestMapping("index")
@@ -46,5 +46,14 @@ public class TestController {
         userList.add(user2);
 
         return JsonUtil.toJsonString(userList);
+    }
+
+    @RequestMapping("logs")
+    @ResponseBody
+    public void test3(){
+        logger.info("logger info...");
+        logger.debug("logger debug...");
+        logger.error("logger error");
+        logger.warn("logger warning...");
     }
 }

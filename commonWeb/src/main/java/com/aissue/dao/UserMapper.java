@@ -4,7 +4,7 @@ package com.aissue.dao;
 import com.aissue.entity.User;
 import org.apache.ibatis.annotations.Param;
 
-@MyBatis
+//@MyBatis
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 
