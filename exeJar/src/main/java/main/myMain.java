@@ -13,5 +13,7 @@ public class myMain {
         System.out.println("myMain is running...");
         System.out.println("myMain is running...");
         semaphore.acquire();
+
+        //test一下
     }
 }
