@@ -51,7 +51,7 @@ public class DubboUtil {
     }
 
     //创建接口暴露服务
-    public static ServiceConfig buildServiceConfig(String interfaceCode,GenericService genericService){
+    public static ServiceConfig buildServiceConfig(String interfaceCode,GenericService genericService,int timeOut){
         DubboConfig dubboConfig = DubboConfig.getInstance();
         ServiceConfig serviceConfig = new ServiceConfig();
         serviceConfig.setApplication(dubboConfig.getApplicationConfig());
@@ -60,7 +60,7 @@ public class DubboUtil {
         serviceConfig.setInterface(interfaceCode);
         serviceConfig.setRef(genericService);
         /*尽量在provider层进行时间的设定，消费端不做设定*/
-        serviceConfig.setTimeout(60000);
+        serviceConfig.setTimeout(timeOut);
         serviceConfig.setRetries(0);
         serviceConfig.setVersion(dubboConfig.getVersion());
         return serviceConfig;

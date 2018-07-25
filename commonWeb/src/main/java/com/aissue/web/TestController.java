@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author yscredit
@@ -32,6 +33,11 @@ public class TestController {
         Map<String,String> map = new HashMap<>();
         map.put("name","aissue");
         map.put("age","27");
+        try {
+            TimeUnit.SECONDS.sleep(10L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return map;
     }
 
@@ -55,5 +61,15 @@ public class TestController {
         logger.debug("logger debug...");
         logger.error("logger error");
         logger.warn("logger warning...");
+    }
+
+    @RequestMapping("error")
+    @ResponseBody
+    public Map test4(){
+        Map<String,String> map = new HashMap<>();
+        map.put("name","error");
+        map.put("age","20");
+        throw new RuntimeException("just a error test!");
+        //return map;
     }
 }
