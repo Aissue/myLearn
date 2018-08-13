@@ -14,12 +14,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="commonWeb" target="1.7" />
-      <module name="dubboProvider" target="1.5" />
+      <module name="commonWeb" target="1.8" />
+      <module name="dubboProvider" target="1.8" />
       <module name="exeJar" target="1.8" />
-      <module name="justJar" target="1.5" />
-      <module name="myLearn" target="1.5" />
-      <module name="zooKeeperLearn" target="1.6" />
+      <module name="justJar" target="1.8" />
+      <module name="myLearn" target="1.8" />
+      <module name="zooKeeperLearn" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

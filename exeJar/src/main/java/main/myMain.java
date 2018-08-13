@@ -1,19 +1,21 @@
 package main;
 
-import java.util.concurrent.Semaphore;
-
 /**
  * @author yscredit
  */
 public class myMain {
-    private static Semaphore semaphore = new Semaphore(1);
     public static void main(String[] args) throws InterruptedException {
-        semaphore.acquire();
-        System.out.println("myMain is running...");
-        System.out.println("myMain is running...");
-        System.out.println("myMain is running...");
-        semaphore.acquire();
-
-        //test一下
+        MemUsage memUsage = new MemUsage();
+        CpuUsage cpuUsage = new CpuUsage();
+        IoUsage ioUsage = new IoUsage();
+        while(true){
+            System.out.println("=====================");
+            System.out.println(memUsage.get());
+            System.out.println("=====================");
+            System.out.println(cpuUsage.get());
+            System.out.println("=====================");
+            System.out.println(ioUsage.get());
+            Thread.sleep(5000);
+        }
     }
 }
