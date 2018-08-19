@@ -1,25 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <resourceExtensions />
     <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="aboutGC" />
         <module name="commonWeb" />
         <module name="dubboProvider" />
-        <module name="exeJar" />
         <module name="justJar" />
+        <module name="redisLearn" />
+      </profile>
+      <profile default="false" name="Annotation profile for zooKeeperLearn" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="zooKeeperLearn" />
+      </profile>
+      <profile default="false" name="Annotation profile for exeJar" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="exeJar" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="commonWeb" target="1.8" />
-      <module name="dubboProvider" target="1.8" />
+      <module name="aboutGC" target="1.5" />
+      <module name="commonWeb" target="1.7" />
+      <module name="dubboProvider" target="1.5" />
       <module name="exeJar" target="1.8" />
-      <module name="justJar" target="1.8" />
-      <module name="myLearn" target="1.8" />
-      <module name="zooKeeperLearn" target="1.8" />
+      <module name="justJar" target="1.5" />
+      <module name="myLearn" target="1.5" />
+      <module name="redisLearn" target="1.5" />
+      <module name="zooKeeperLearn" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
