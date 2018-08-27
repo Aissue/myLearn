@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,8 +28,10 @@ import java.util.concurrent.TimeUnit;
 @Controller
 @RequestMapping("test")
 public class TestController {
-//    private Logger logger = Logger.getLogger(TestController.class);
-    private Logger logger = Logger.getLogger(User.class);
+    private Logger logger = Logger.getLogger(TestController.class);
+//    private Logger logger = Logger.getLogger(User.class);
+
+    private static final Map<String,GenericService> gMap = new HashMap<>();
 
     @Autowired(required = false)
     private UserService userService;
@@ -134,5 +137,47 @@ public class TestController {
         Map<String,List<Map<String,Object>>> map = (Map<String,List<Map<String,Object>>>)obj;
         String s = JsonUtil.toJsonString(obj);*/
         return "";
+    }
+
+    @RequestMapping("webservice")
+    @ResponseBody
+    public String test7(InterRequestVo interRequest, HttpServletRequest request){
+        System.out.println(interRequest);
+        Map<String,String[]> map = request.getParameterMap();
+        Map<String,String> newM = new HashMap<>();
+        for (String s : map.keySet()) {
+            newM.put(s,map.get(s)[0]);
+        }
+        interRequest.setParams(newM);
+        GenericService genericService = getG(interRequest);
+        String[] paramNames = {"interRequestVo"};
+        Object[] paramValues = {interRequest};
+        Object obj = genericService.$invoke("",paramNames,paramValues);
+        String s = JsonUtil.toJsonString(obj);
+
+        return s;
+    }
+
+    private GenericService getG(InterRequestVo interRequest){
+        String interfaceCode = interRequest.getInterCode();
+        GenericService genericService = gMap.get(interfaceCode);
+        if(genericService != null ){
+            return genericService;
+        }else{
+            ReferenceConfig<GenericService> reference = new ReferenceConfig<GenericService>();
+            reference.setInterface(interRequest.getInterCode());
+            reference.setVersion("1.0.1");
+            RegistryConfig registryConfig = new RegistryConfig();
+            registryConfig.setAddress("zookeeper://59.202.43.113:2181");
+            reference.setRegistry(registryConfig);
+            ApplicationConfig applicationConfig = new ApplicationConfig();
+            applicationConfig.setName("openApi");
+            reference.setApplication(applicationConfig);
+            reference.setGeneric(true);
+            GenericService newG = reference.get();
+            gMap.put(interfaceCode,newG);
+            return newG;
+        }
+
     }
 }
