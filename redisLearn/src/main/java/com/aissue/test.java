@@ -20,21 +20,26 @@ public class test {
        jedisPoolConfig.setMaxWaitMillis(1000L);
        jedisPoolConfig.setTestOnBorrow(true);
        jedisPoolConfig.setTestOnReturn(true);
-       jedisUtils = new JedisUtils(jedisPoolConfig,"59.202.43.113",6379);
+       jedisUtils = new JedisUtils(jedisPoolConfig,"192.168.40.14",6379);
     }
 
     @Test
     public void test1(){
-        Long num = jedisUtils.publish("aissue","this is my message...");
+        Long num = jedisUtils.publish("aissue","this is my message..."+System.currentTimeMillis());
         System.out.println(num);
+        /*for(int i=0;i<50;i++){
+            Long num = jedisUtils.publish("aissue","this is my message..."+System.currentTimeMillis());
+            System.out.println(num);
+        }*/
+
 
     }
 
     @Test
     public void test2() throws InterruptedException {
-        Semaphore semaphore = new Semaphore(1);
-        semaphore.acquire();
+        /*Semaphore semaphore = new Semaphore(1);
+        semaphore.acquire();*/
         jedisUtils.subscrib("aissue");
-        semaphore.acquire();
+//        semaphore.acquire();
     }
 }
