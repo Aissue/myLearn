@@ -25,12 +25,13 @@ public class test {
 
     @Test
     public void test1(){
-        Long num = jedisUtils.publish("aissue","this is my message..."+System.currentTimeMillis());
-        System.out.println(num);
         /*for(int i=0;i<50;i++){
-            Long num = jedisUtils.publish("aissue","this is my message..."+System.currentTimeMillis());
+            Long num = jedisUtils.publish("aissue1","this is my message..."+System.currentTimeMillis());
             System.out.println(num);
         }*/
+        Long num = jedisUtils.publish("aissue2","this is my message..."+System.currentTimeMillis());
+        System.out.println(num);
+
 
 
     }

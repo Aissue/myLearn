@@ -141,4 +141,9 @@ public class MyMain {
         System.out.println(s2+"|"+s);
 
     }
+
+    @Test
+    public void test4(){
+//        String str = new String("abc".getBytes(),"utf-8");
+    }
 }
