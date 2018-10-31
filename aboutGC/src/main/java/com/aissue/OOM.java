@@ -23,5 +23,6 @@ public class OOM {
     public static void main(String[] args) throws Exception{
         fillHeap(10000);
         System.gc();
+        System.out.println("测试一下");
     }
 }
