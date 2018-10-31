@@ -20,7 +20,7 @@ public class test {
        jedisPoolConfig.setMaxWaitMillis(1000L);
        jedisPoolConfig.setTestOnBorrow(true);
        jedisPoolConfig.setTestOnReturn(true);
-       jedisUtils = new JedisUtils(jedisPoolConfig,"192.168.40.14",6379);
+       jedisUtils = new JedisUtils(jedisPoolConfig,"59.202.43.113",6379);
     }
 
     @Test
@@ -42,5 +42,10 @@ public class test {
         semaphore.acquire();*/
         jedisUtils.subscrib("aissue");
 //        semaphore.acquire();
+    }
+
+    @Test
+    public void test3(){
+        jedisUtils.set("test","test timeout...",10);
     }
 }

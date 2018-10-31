@@ -97,7 +97,10 @@ public class JedisUtils {
      */
     public static Jedis getResource(){
         isInit();
-        return pool.getResource();
+        Jedis jedis = pool.getResource();
+        jedis.select(3);
+        jedis.configSet("notify-keyspace-events","Ex");
+        return jedis;
     }
 
     /**
