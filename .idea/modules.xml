@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/aboutGC/aboutGC.iml" filepath="$PROJECT_DIR$/aboutGC/aboutGC.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonWeb/commonWeb.iml" filepath="$PROJECT_DIR$/commonWeb/commonWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubboProvider/dubboProvider.iml" filepath="$PROJECT_DIR$/dubboProvider/dubboProvider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elasticSearchLearn/elasticSearchLearn.iml" filepath="$PROJECT_DIR$/elasticSearchLearn/elasticSearchLearn.iml" />
       <module fileurl="file://$PROJECT_DIR$/exeJar/exeJar.iml" filepath="$PROJECT_DIR$/exeJar/exeJar.iml" />
       <module fileurl="file://$PROJECT_DIR$/justJar/justJar.iml" filepath="$PROJECT_DIR$/justJar/justJar.iml" />
       <module fileurl="file://$PROJECT_DIR$/myLearn.iml" filepath="$PROJECT_DIR$/myLearn.iml" />

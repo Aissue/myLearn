@@ -16,6 +16,7 @@
         <module>redisLearn</module>
         <module>justJar</module>
         <module>aboutGC</module>
+        <module>elasticSearchLearn</module>
     </modules>
 
     <properties>
