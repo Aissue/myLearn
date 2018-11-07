@@ -17,9 +17,9 @@ public class DubboUtil {
     private static final Logger logger = Logger.getLogger(DubboUtil.class);
 
     // 暴露接口服务的Map
-    private static Map<String,ServiceConfig> exportMap=new ConcurrentHashMap<>();
+    private static Map<String,ServiceConfig> exportMap=new ConcurrentHashMap<String,ServiceConfig>();
     // 引用接口服务的Map
-    private static Map<String,ReferenceConfig> referenceMap=new ConcurrentHashMap<>();
+    private static Map<String,ReferenceConfig> referenceMap=new ConcurrentHashMap<String,ReferenceConfig>();
 
 
     //dubbo通过API方式暴露接口服务
