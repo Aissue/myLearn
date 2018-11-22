@@ -17,6 +17,7 @@
         <module>justJar</module>
         <module>aboutGC</module>
         <module>elasticSearchLearn</module>
+        <module>dockerWeb</module>
     </modules>
 
     <properties>

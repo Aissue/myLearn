@@ -37,7 +37,7 @@
         <!-- 连接池配置. -->
         <property name="poolConfig" ref="jedisPoolConfig" />
         <!-- Redis服务主机. -->
-        <property name="hostName" value="59.202.43.113" />
+        <property name="hostName" value="192.168.40.14" />
         <!-- Redis服务端口号. -->
         <property name="port" value="6379" />
         <!-- Redis服务连接密码. -->
