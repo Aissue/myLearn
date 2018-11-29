@@ -17,9 +17,9 @@ public class HelloZk {
 
     @Before
     public void before() throws IOException {//10.1.1.147:2181,
-        this.zk = new ZooKeeper("127.0.0.1:2181", 3000, new Watcher() {
+        this.zk = new ZooKeeper("192.168.248.130:2181", 3000, new Watcher() {
             public void process(WatchedEvent watchedEvent) {
-//                System.out.println("已经触发了"+watchedEvent.getType()+"事件。");
+                System.out.println("已经触发了"+watchedEvent.getType()+"事件。");
             }
         });
         this.hw = new HelloWatcher();
@@ -97,18 +97,20 @@ public class HelloZk {
     @Test
     public void test1(){
         try {
-            if(zk.exists("/testRootPath",false) == null){
-                zk.create("/testRootPath","testRootValue".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+            for(int i=0;i<2;i++){
+                if(zk.exists("/testRootPath"+i,false) == null){
+                    zk.create("/testRootPath"+i,"testRootValue".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+                }
+                if(zk.exists("/testRootPath"+i+"/testChildPath"+i,false) == null){
+                    zk.create("/testRootPath"+i+"/testChildPath"+i,"testChildValue".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE,CreateMode.PERSISTENT);
+                }
+//                System.out.println(new String(zk.getData("/testRootPath/testChildPath",false,null)));
+//                List<String> list = zk.getChildren("/testRootPath",false);
+//                for(String str : list){
+//                    System.out.println("======"+str);
+//                }
             }
-            System.out.println(new String(zk.getData("/testRootPath",false,null)));
-            if(zk.exists("/testRootPath/testChildPath",false) == null){
-               zk.create("/testRootPath/testChildPath","testChildValue".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE,CreateMode.PERSISTENT);
-            }
-            System.out.println(new String(zk.getData("/testRootPath/testChildPath",false,null)));
-            List<String> list = zk.getChildren("/testRootPath",false);
-            for(String str : list){
-                System.out.println("======"+str);
-            }
+
 //            zk.setData("/testRootPath","NewRootValue".getBytes(),-1);
 //            zk.delete("/testRootPath/testChildPath",0);
 //            zk.delete("/testRootPath",0);

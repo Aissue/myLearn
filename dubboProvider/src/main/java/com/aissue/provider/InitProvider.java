@@ -15,7 +15,7 @@ public class InitProvider implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         logger.info("Spring is running ...");
         InterfaceGenericService interfaceGenericService = new InterfaceGenericService();
-        ServiceConfig newConfig = DubboUtil.buildServiceConfig("aissueInterface2",interfaceGenericService,3000);
+        ServiceConfig newConfig = DubboUtil.buildServiceConfig("aissueInterface",interfaceGenericService,3000);
         DubboUtil.export("aissueInterface",newConfig);
     }
 
