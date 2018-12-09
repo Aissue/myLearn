@@ -18,6 +18,7 @@
         <module>aboutGC</module>
         <module>elasticSearchLearn</module>
         <module>dockerWeb</module>
+        <module>java8</module>
     </modules>
 
     <properties>
