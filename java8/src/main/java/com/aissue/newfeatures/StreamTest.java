@@ -1,4 +1,4 @@
-package com.aissue;
+package com.aissue.newfeatures;
 
 import org.junit.Test;
 
