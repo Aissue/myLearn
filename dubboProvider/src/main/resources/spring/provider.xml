@@ -15,4 +15,11 @@
 
     <dubbo:application name="MT_DUBBO_PROVIDER"></dubbo:application>
     <dubbo:registry address="zookeeper://192.168.40.14:2181" check="false" subscribe="false" ></dubbo:registry>
+    <dubbo:annotation package="com.aissue.annotation.impl"/>
+    <dubbo:provider timeout="5000">
+        <dubbo:service interface="com.aissue.annotation.IAnnotation" ref="annotation1">
+            <dubbo:method name="test1" timeout="2000"/>
+            <dubbo:method name="test2" timeout="3000"/>
+        </dubbo:service>
+    </dubbo:provider>
 </beans>
