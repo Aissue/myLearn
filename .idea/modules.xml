@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/elasticSearchLearn/elasticSearchLearn.iml" filepath="$PROJECT_DIR$/elasticSearchLearn/elasticSearchLearn.iml" />
       <module fileurl="file://$PROJECT_DIR$/exeJar/exeJar.iml" filepath="$PROJECT_DIR$/exeJar/exeJar.iml" />
       <module fileurl="file://$PROJECT_DIR$/java8/java8.iml" filepath="$PROJECT_DIR$/java8/java8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaSPI/javaSPI.iml" filepath="$PROJECT_DIR$/javaSPI/javaSPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/justJar/justJar.iml" filepath="$PROJECT_DIR$/justJar/justJar.iml" />
       <module fileurl="file://$PROJECT_DIR$/myLearn.iml" filepath="$PROJECT_DIR$/myLearn.iml" />
       <module fileurl="file://$PROJECT_DIR$/redisLearn/redisLearn.iml" filepath="$PROJECT_DIR$/redisLearn/redisLearn.iml" />

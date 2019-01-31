@@ -19,6 +19,7 @@
         <module>elasticSearchLearn</module>
         <module>dockerWeb</module>
         <module>java8</module>
+        <module>javaSPI</module>
     </modules>
 
     <properties>
@@ -29,6 +30,7 @@
         <shiro.version>1.2.3</shiro.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mybatis.version>3.3.1</mybatis.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencyManagement>
