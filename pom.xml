@@ -24,7 +24,7 @@
 
     <properties>
         <!--版本管理-->
-        <spring-framework.version>4.3.18.RELEASE</spring-framework.version>
+        <spring-framework.version>6.0.0</spring-framework.version>
         <httpcomponents.version>4.2.2</httpcomponents.version>
         <jackson.version>1.9.13</jackson.version>
         <shiro.version>1.2.3</shiro.version>
